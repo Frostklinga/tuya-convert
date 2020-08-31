@@ -2,7 +2,7 @@
 
 # Source config
 . ../config.txt
-
+NetworkManagerBin=$(which NetworkManager | cut -d"/" -f 4)
 version_check () {
 	echo "System info"
 	echo "==========="
@@ -26,7 +26,7 @@ setup () {
 
 	if test -d /etc/NetworkManager; then
 		echo "Stopping NetworkManager..."
-		sudo service network-manager stop
+		sudo service NetworkManagerBin stop
 	fi
 
 	echo "Configuring AP interface..."
@@ -61,7 +61,8 @@ cleanup () {
 
 	if test -d /etc/NetworkManager; then
 		echo "Restarting NetworkManager..."
-		sudo service network-manager restart
+		sudo service NetworkManagerBin restart
+		
 	fi
 }
 

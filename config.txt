@@ -1,3 +1,4 @@
+
 # Please input the wlan device to be used (most of the time it is wlan0 or wlan1)
 WLAN=wlan0
 
